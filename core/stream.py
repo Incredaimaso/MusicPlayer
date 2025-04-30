@@ -59,7 +59,7 @@ async def start_stream(song: Song, lang):
             chat.id,
             get_quality(song),
         )
-        except NoActiveGroupCall:
+    except NoActiveGroupCall:
         peer = await app.resolve_peer(chat.id)
         await app.invoke(
             CreateGroupCall(
